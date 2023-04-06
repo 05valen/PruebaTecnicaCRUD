@@ -1,0 +1,180 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 1048576 bytes for AllocateHeap
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Unscaled Compressed Oops mode in which the Java heap is
+#     placed in the first 4GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 4GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (memory/allocation.inline.hpp:61), pid=6364, tid=0x00000000000005f8
+#
+# JRE version:  (8.0_291-b10) (build )
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (25.291-b10 mixed mode windows-amd64 compressed oops)
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000001d611a91000):  JavaThread "Unknown thread" [_thread_in_vm, id=1528, stack(0x000000abed000000,0x000000abed100000)]
+
+Stack: [0x000000abed000000,0x000000abed100000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x32ea19]
+V  [jvm.dll+0x275462]
+V  [jvm.dll+0x27610d]
+V  [jvm.dll+0x26cb45]
+V  [jvm.dll+0x509d]
+V  [jvm.dll+0x3d2f93]
+V  [jvm.dll+0x3d39a8]
+V  [jvm.dll+0xfcaff]
+V  [jvm.dll+0x209dfb]
+V  [jvm.dll+0x238827]
+V  [jvm.dll+0x1625b6]
+C  [java.exe+0x2312]
+C  [java.exe+0x15f54]
+C  [KERNEL32.DLL+0x17614]
+C  [ntdll.dll+0x526a1]
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+
+Other Threads:
+
+=>0x000001d611a91000 (exited) JavaThread "Unknown thread" [_thread_in_vm, id=1528, stack(0x000000abed000000,0x000000abed100000)]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+heap address: 0x0000000082200000, size: 2014 MB, Compressed Oops mode: 32-bit
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 3
+Compressed class space size: 1073741824 Address: 0x0000000100000000
+
+Heap:
+ PSYoungGen      total 37888K, used 655K [0x00000000d6100000, 0x00000000d8b00000, 0x0000000100000000)
+  eden space 32768K, 2% used [0x00000000d6100000,0x00000000d61a3d80,0x00000000d8100000)
+  from space 5120K, 0% used [0x00000000d8600000,0x00000000d8600000,0x00000000d8b00000)
+  to   space 5120K, 0% used [0x00000000d8100000,0x00000000d8100000,0x00000000d8600000)
+ ParOldGen       total 86016K, used 0K [0x0000000082200000, 0x0000000087600000, 0x00000000d6100000)
+  object space 86016K, 0% used [0x0000000082200000,0x0000000082200000,0x0000000087600000)
+ Metaspace       used 778K, capacity 4480K, committed 4480K, reserved 1056768K
+  class space    used 76K, capacity 384K, committed 384K, reserved 1048576K
+
+Card table byte_map: [0x000001d622910000,0x000001d622d00000] byte_map_base: 0x000001d6224ff000
+
+Marking Bits: (ParMarkBitMap*) 0x000000006bb37fe0
+ Begin Bits: [0x000001d622fa0000, 0x000001d624f18000)
+ End Bits:   [0x000001d624f18000, 0x000001d626e90000)
+
+Polling page: 0x000001d611a10000
+
+CodeCache: size=245760Kb used=328Kb max_used=328Kb free=245431Kb
+ bounds [0x000001d613550000, 0x000001d6137c0000, 0x000001d622550000]
+ total_blobs=58 nmethods=0 adapters=38
+ compilation: enabled
+
+Compilation events (0 events):
+No events
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+Events (10 events):
+Event: 0.029 loading class java/lang/Short
+Event: 0.029 loading class java/lang/Short done
+Event: 0.029 loading class java/lang/Integer
+Event: 0.030 loading class java/lang/Integer done
+Event: 0.030 loading class java/lang/Long
+Event: 0.030 loading class java/lang/Long done
+Event: 0.030 loading class java/lang/NullPointerException
+Event: 0.030 loading class java/lang/NullPointerException done
+Event: 0.030 loading class java/lang/ArithmeticException
+Event: 0.030 loading class java/lang/ArithmeticException done
+
+
+Dynamic libraries:
+0x00007ff6f5750000 - 0x00007ff6f5797000 	C:\Program Files\Java\jdk1.8.0_291\jre\bin\java.exe
+0x00007ff8ed550000 - 0x00007ff8ed748000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ff8eb5c0000 - 0x00007ff8eb67f000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007ff8eb130000 - 0x00007ff8eb402000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007ff8ec300000 - 0x00007ff8ec3ae000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007ff8ec140000 - 0x00007ff8ec1de000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007ff8ecc40000 - 0x00007ff8eccdc000 	C:\WINDOWS\System32\sechost.dll
+0x00007ff8ec3b0000 - 0x00007ff8ec4d4000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007ff8eca90000 - 0x00007ff8ecc31000 	C:\WINDOWS\System32\USER32.dll
+0x00007ff8eaff0000 - 0x00007ff8eb012000 	C:\WINDOWS\System32\win32u.dll
+0x00007ff8ec4e0000 - 0x00007ff8ec50b000 	C:\WINDOWS\System32\GDI32.dll
+0x00007ff8eb020000 - 0x00007ff8eb12f000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007ff8eaf50000 - 0x00007ff8eafed000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007ff8ead00000 - 0x00007ff8eae00000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007ff8d90b0000 - 0x00007ff8d934a000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.1110_none_60b5254171f9507e\COMCTL32.dll
+0x00007ff8ecdf0000 - 0x00007ff8ece20000 	C:\WINDOWS\System32\IMM32.DLL
+0x00007ff8e2980000 - 0x00007ff8e2995000 	C:\Program Files\Java\jdk1.8.0_291\jre\bin\vcruntime140.dll
+0x00007ff8e11d0000 - 0x00007ff8e126b000 	C:\Program Files\Java\jdk1.8.0_291\jre\bin\msvcp140.dll
+0x000000006b350000 - 0x000000006bbb0000 	C:\Program Files\Java\jdk1.8.0_291\jre\bin\server\jvm.dll
+0x00007ff8eca80000 - 0x00007ff8eca88000 	C:\WINDOWS\System32\PSAPI.DLL
+0x00007ff8da8d0000 - 0x00007ff8da8f7000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ff8e6490000 - 0x00007ff8e6499000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x00007ff8ec7a0000 - 0x00007ff8ec80b000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007ff8da4b0000 - 0x00007ff8da4ba000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007ff8e8ad0000 - 0x00007ff8e8ae2000 	C:\WINDOWS\SYSTEM32\kernel.appcore.dll
+0x00007ff8e4cc0000 - 0x00007ff8e4cd0000 	C:\Program Files\Java\jdk1.8.0_291\jre\bin\verify.dll
+0x00007ff8e2950000 - 0x00007ff8e297b000 	C:\Program Files\Java\jdk1.8.0_291\jre\bin\java.dll
+0x00007ff8e2910000 - 0x00007ff8e2928000 	C:\Program Files\Java\jdk1.8.0_291\jre\bin\zip.dll
+0x00007ff8da5b0000 - 0x00007ff8da794000 	C:\WINDOWS\SYSTEM32\dbghelp.dll
+0x00007ff8eae00000 - 0x00007ff8eae82000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+
+VM Arguments:
+jvm_args: -Xverify:none -XX:TieredStopAtLevel=1 
+java_command: com.pruebaTecnica.PruebaCRUD.PruebaCrudApplication
+java_class_path (initial): E:\pruebas tecnicas\PruebaCRUD\target\classes;C:\Users\valen\.m2\repository\org\springframework\spring-aop\5.3.26\spring-aop-5.3.26.jar;C:\Users\valen\.m2\repository\org\aspectj\aspectjweaver\1.9.7\aspectjweaver-1.9.7.jar;C:\Users\valen\.m2\repository\com\zaxxer\HikariCP\4.0.3\HikariCP-4.0.3.jar;C:\Users\valen\.m2\repository\org\springframework\spring-jdbc\5.3.26\spring-jdbc-5.3.26.jar;C:\Users\valen\.m2\repository\jakarta\transaction\jakarta.transaction-api\1.3.3\jakarta.transaction-api-1.3.3.jar;C:\Users\valen\.m2\repository\jakarta\persistence\jakarta.persistence-api\2.2.3\jakarta.persistence-api-2.2.3.jar;C:\Users\valen\.m2\repository\org\hibernate\hibernate-core\5.6.15.Final\hibernate-core-5.6.15.Final.jar;C:\Users\valen\.m2\repository\org\jboss\logging\jboss-logging\3.4.3.Final\jboss-logging-3.4.3.Final.jar;C:\Users\valen\.m2\repository\net\bytebuddy\byte-buddy\1.12.23\byte-buddy-1.12.23.jar;C:\Users\valen\.m2\repository\antlr\antlr\2.7.7\antlr-2.7.7.jar;C:\Users\valen\.m2\repository\org\jboss\jandex\2.4.2.Final\jandex-2.4.2.Final.jar;C:\Users\valen\.m2\repository\com\fasterxml\classmate\1.5.1\classmate-1.5.1.jar;C:\Users\valen\.m2\repository\org\hibernate\common\hibernate-commons-annotations\5.1.2.Final\hibernate-commons-annotations-5.1.2.Final.jar;C:\Users\valen\.m2\repository\org\glassfish\jaxb\jaxb-runtime\2.3.8\jaxb-runtime-2.3.8.jar;C:\Users\valen\.m2\repository\org\glassfish\jaxb\txw2\2.3.8\txw2-2.3.8.jar;C:\Users\valen\.m2\repository\com\sun\istack\istack-commons-runtime\3.0.12\istack-commons-runtime-3.0.12.jar;C:\Users\valen\.m2\repository\com\sun\activation\jakarta.activation\1.2.2\jakarta.activation-1.2.2.jar;C:\Users\valen\.m2\repository\org\springframework\data\spring-data-jpa\2.7.10\spring-data-jpa-2.7.10.jar;C:\Users\valen\.m2\repository\org\springframework\data\spring-data-commons\2.7.10\spring-data-commons-2.7.10.jar;C:\Users\valen\.m2\repository\org\springframework\spring-orm\5.3.26\spring-orm-5.3.26.jar;C:\Users\
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk1.8.0_291
+JRE_HOME=C:\Program Files\Java\jre1.8.0_291
+CLASSPATH=C:\Program Files\Java\jdk1.8.0_291\bin;JRE_HOME%\BIN;CATALINA_HOME%\lib
+PATH=C:\ProgramData\Oracle\Java\javapath;C:\Users\valen\AppData\Local\Programs\Python\Python39\Scripts\;C:\Users\valen\AppData\Local\Programs\Python\Python39\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Users\valen\AppData\Local\Programs\Python\Python39;E:\UNIVERSIDAD\SEMESTRE 2021-1\PRUEBAS Y GESTION\chromedriver;C:\Program Files\nodejs\;C:\ProgramData\chocolatey\bin;C:\Program Files (x86)\Microsoft SQL Server\150\DTS\Binn\;C:\Program Files\Azure Data Studio\bin;%JAVA_HOME_8%\bin;E:\intall intellij\gradle-7.1.1\bin\;E:\UNIVERSIDAD\SEMESTRE 2021-1\PRUEBAS Y GESTION\jenkis-tomcat\Despliegue\apache-maven-3.8.1\bin;C:\Program Files\Git\cmd;C:\Program Files (x86)\sonar-scanner-4.6.2.2472-windows\bin;C:\Program Files\Java\jdk1.8.0_291\bin;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\150\DTS\Binn\;C:\laragon\bin\php\php-7.4.19-Win32-vc15-x64;C:\composer;C:\Program Files\PuTTY\;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Program Files\MongoDB\Server\5.0\bin;C:\Program Files\erl-24.1.7\bin;C:\Program Files (x86)\Elixir\bin;C:\Users\valen\.mix\escripts;E:\pruebas tecnicas\apache-maven-3.9.1\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\valen\AppData\Local\Microsoft\WindowsApps;C:\Users\valen\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\valen\AppData\Local\GitHubDesktop\bin;C:\Users\valen\AppData\Roaming\npm;C:\Program Files\Azure Data Studio\bin;E:\UNIVERSIDAD\SEMESTRE 2021-1\PRUEBAS Y GESTION\jenkis-tomcat\Despliegue\apache-maven-3.8.1\bin;C:\Program Files (x86)\sonar-scanner-4.6.2.2472-windows\bin;C:\Program Files\JetBrains\IntelliJ IDEA 2021.2.3\bin;;C:\Program Files\heroku\bin;C:\Users\valen\AppData\Roaming\Composer\vendor\bin;C:\Program Files\MySQL\MySQL Server 8.0\bin;
+USERNAME=valen
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 58 Stepping 9, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 10.0 , 64 bit Build 19041 (10.0.19041.2546)
+
+CPU:total 4 (initial active 4) (2 cores per cpu, 2 threads per core) family 6 model 58 stepping 9, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, aes, clmul, erms, ht, tsc, tscinvbit, tscinv
+
+Memory: 4k page, physical 8245304k(1351960k free), swap 12641188k(5544k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (25.291-b10) for windows-amd64 JRE (1.8.0_291-b10), built on Apr  9 2021 00:02:00 by "java_re" with MS VC++ 15.9 (VS2017)
+
+time: Tue Apr  4 20:14:42 2023
+timezone: Hora est. Pacífico, Sudamérica
+elapsed time: 0.056328 seconds (0d 0h 0m 0s)
+

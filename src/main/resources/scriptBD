@@ -1,0 +1,33 @@
+create database GestionDeExamenes;
+use GestionDeExamenes;
+create table Estudiantes(
+  id int not null auto_increment,
+  nombre varchar (50) not null,
+  edad int not null,
+  cuidad varchar (50) not null,
+  zona_Horaria int not null,
+  primary key(id)
+);
+
+DROP TABLE `GestionDeExamenes`.`gestiondeexamenes`;
+
+INSERT INTO Estudiantes (nombre, edad, cuidad,zona_Horaria) VALUES
+ ('VALEN', 25,  '25',15 );
+
+SELECT * FROM Estudiantes;
+
+create table Informacion_examenes(
+  id_info_ex int not null auto_increment,
+  fecha Date,
+  asignacion_utc int not null,
+  primary key(id_info_ex)
+);
+
+#DATETIME YYYY-MM-DD
+INSERT INTO informacion_examenes (fecha, asignacion_utc) VALUES
+( CURDATE(), 25 );
+
+SELECT * FROM informacion_examenes;
+
+
+ mvn spring-boot:run
